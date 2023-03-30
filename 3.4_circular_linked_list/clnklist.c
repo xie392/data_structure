@@ -88,7 +88,8 @@ node *insert(node *head, datatype x, int i) {
     }
 
     if(i == 0 && !head) {
-        p -> next = head;
+//        p -> next = head;
+        p -> next = p;
         head = p;
         return head;
     }
