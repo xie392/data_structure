@@ -21,11 +21,13 @@ int main(){
 
     // 打印栈顶元素
     printf("栈顶元素为：%d\n", ReadTopStack(&stack));
+
     // 删除栈顶元素
+    printf("删除元素操作...\n");
     PopStack(&stack);
 
     // 打印所有元素
-    printf("栈中所有元素为");
+    printf("删除元素后栈中所有元素为");
     PrintStack(&stack);
     printf("\n");
 

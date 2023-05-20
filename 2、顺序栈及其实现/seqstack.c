@@ -3,8 +3,9 @@
 //
 #include "seqstack.h"
 
+
 /**
- * æ ˆçš„åˆå§‹åŒ–
+ * Õ»µÄ³õÊ¼»¯
  * @param S
  * @return void
  */
@@ -13,64 +14,64 @@ void InitStack(SeqStack *S) {
 }
 
 /**
-* åˆ¤æ–­æ ˆæ˜¯å¦ä¸ºç©º
+* ÅĞ¶ÏÕ»ÊÇ·ñÎª¿Õ
  * @param S
- * @return 1: ç©º 0: éç©º
+ * @return 1: ¿Õ 0: ·Ç¿Õ
 */
 int IsEmpty(SeqStack *S) {
     return S->top == 0;
 }
 
 /**
-* è¯»å–æ ˆé¡¶å…ƒç´ 
+* ¶ÁÈ¡Õ»¶¥ÔªËØ
  * @param S
- * @return æ ˆé¡¶å…ƒç´ 
+ * @return Õ»¶¥ÔªËØ
 */
 DataType ReadTopStack(SeqStack *S) {
     if (IsEmpty(S)) {
-        printf("æ ˆç©º\n");
-        exit(1);
+        printf("Õ»¿Õ\n");
+        return 0;
     }
     return S->data[S->top - 1];
 }
 
 /**
-* æ ˆçš„æ’å…¥æ“ä½œ
+* Õ»µÄ²åÈë²Ù×÷
  * @param S
  * @param x
  * @return void
 */
 void PushStack(SeqStack *S, DataType x) {
     if (S->top == MAXSIZE) {
-        printf("æ ˆæ»¡\n");
+        printf("Õ»Âú\n");
         exit(1);
     }
     S->data[S->top++] = x;
 }
 
 /**
-* æ ˆçš„åˆ é™¤æ“ä½œ
+* Õ»µÄÉ¾³ı²Ù×÷
  * @param S
  * @return void
 */
 void PopStack(SeqStack *S) {
     if (IsEmpty(S)) {
-        printf("æ ˆç©º\n");
+        printf("Õ»¿Õ\n");
         exit(1);
     }
-    // ä¸ºä»€ä¹ˆä¸æŠŠ S -> data[S->top] = 0; ?
-    // å› ä¸ºè¿™æ ·ä¼šå¯¼è‡´æ ˆé¡¶å…ƒç´ è¢«è¦†ç›– 0 äº†
+    // ÎªÊ²Ã´²»°Ñ S -> data[S->top] = 0; ?
+    // ÒòÎªÕâÑù»áµ¼ÖÂÕ»¶¥ÔªËØ±»¸²¸Ç 0 ÁË
     S->top--;
 }
 
 /**
-* æ‰“å°æ ˆä¸­å…ƒç´ 
+* ´òÓ¡Õ»ÖĞÔªËØ
  * @param S
  * @return void
 */
 void PrintStack(SeqStack *S) {
     if (IsEmpty(S)) {
-        printf("æ ˆç©º\n");
+        printf("Õ»¿Õ\n");
         exit(1);
     }
     for (int i = 0; i < S->top; i++) {
