@@ -1,6 +1,4 @@
 .git
 .idea
 *.iml
-
-# Compiled exe
 *.exe
