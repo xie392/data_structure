@@ -1,5 +1,5 @@
 //
-// Created by 26363 on 2023/5/18.
+// Created by xie392 on 2023/5/18.
 //
 #include "sequlist.h"
 
