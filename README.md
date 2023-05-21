@@ -1,10 +1,8 @@
 <div align="center">
-  <img src="https://github/com/xie392/data_structure
-/accets/logo.png" alt="logo" />
+  <img src="https://raw.githubusercontent.com/xie392/data_structure/master/accets/logo.png" alt="logo" width="250" />
+  <h2>数据结构（C语言版）</h2>
 </div>
-[//]: # (    ![logo]&#40;./accets/logo.png&#41;)
 
-# 数据结构（C语言版）
 
 # 前言
 本来之前都敲有许多的，但是只是照书上敲的，没有做深入理解，也没有整理，所以这次重新开始，从头开始，一步一步的敲，一步一步的理解，一步一步的整理，希望能够坚持下去，加油！
