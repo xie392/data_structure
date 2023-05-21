@@ -1,87 +1,69 @@
 //
 // Created by xie392 on 2023/5/20.
+// 计算后缀表达式
 //
-//#include "../seqstack.c"
 #include <stdio.h>
-
-/**
- * 将数字字符转换为相应的数
- * @param {char} c[]        字符串数组
- * @param {int} i           字符串数组下标
- * @return {double}
- */
-double transformStr(char c[], int *i) {
-    double x = 0.0;
-    int k = 0;
-
-    // 处理整数部分 0~9
-    while (c[*i] >= '0' && c[*i] <= '9') {
-        // 将字符转换为数字
-        x = 10 * x + (c[*i] - '0');
-        // 下标后移
-        (*i)++;
-    }
-
-    // 处理小数部分
-    if (c[*i] == '.') {
-        (*i)++;
-        // 处理小数部分 0~9
-        while (c[*i] >= '0' && c[*i] <= '9') {
-            x = 10 * x + (c[*i] - '0');
-            (*i)++;
-            k++;
-        }
-    }
-
-    while (k != 0) {
-        x /= 10.0;
-        k--;
-    }
-
-    return x;
-}
+#include <math.h>
 
 /**
  * 求一个后缀表达式的值
  * @param {char} c[]        字符串数组
  * @return double
  */
-double EvalPost(char c[]) {
+double calc(const char c[]) {
     double obst[100], x1, x2;
     int top = 0, i = 0;
+    char str[100][100];
 
-    while (c[i] != '#') {
-        if (c[i] >= '0' && c[i] <= '9') {
-            // 把处理好的数据添加进数组
-            obst[top] = transformStr(c, &i);
+    while (c[i] != '\0') {
+
+        /**
+         * k 每次进来都为 0，主要用于str二维数组的第二维下标每次进来都已 0 开始
+         * flag 用于标记是否进入循环，如果没有进入循环，说明是四则运算符，不需要入栈
+         */
+        int k = 0, flag = 0;
+
+        while (c[i] != ' ' && c[i] != '\0') {
+            // 匹配到 0~9 或 "." 可入栈，否则跳出循环
+            if ((c[i] >= '0' && c[i] <= '9') || c[i] == '.') {
+                str[top][k++] = c[i++];
+                flag = 1;
+            } else {
+                break;
+            }
+        }
+
+        // 如果上面已经入栈了，就把入栈的字符串转换成 double 类型，存给 obst
+        if (flag) {
+            // 给每个字符串最后一个元素赋值为 '\0'，防止 atof() 函数转换错误
+            str[top][i] = '\0';
+            // atof() 函数用于将字符串转换成 double 类型，把转换后的值存给 obst
+            obst[top] = atof(str[top]);
+            // top 自增，下次循环就可以存入下一个字符串
             top++;
-        } else if (c[i] == ' ') {
-            i++;
-        } else if (c[i] == '+') {
+            // 重置 flag，防止下次循环进入
+            flag = 0;
+        }
+        i++;
+
+        // 匹配到四则运算符，就从栈中取出两个元素，进行四则运算
+        if (c[i] == '+' || c[i] == '-' || c[i] == '*' || c[i] == '/') {
+            // 取出栈中最后的两个元素，用 x1 和 x2 接收
             x2 = obst[--top];
             x1 = obst[--top];
-            obst[top] = x1 + x2;
-            top++;
-            i++;
-        } else if (c[i] == '-') {
-            x2 = obst[--top];
-            x1 = obst[--top];
-            obst[top] = x1 - x2;
-            top++;
-            i++;
-        } else if (c[i] == '*') {
-            x2 = obst[--top];
-            x1 = obst[--top];
-            obst[top] = x1 * x2;
-            top++;
-            i++;
-        } else if (c[i] == '/') {
-            x2 = obst[--top];
-            x1 = obst[--top];
-            obst[top] = x1 / x2;
-            top++;
+            // 四则运算
+            if(c[i] == '+') {
+                obst[top++] = x1 + x2;
+            } else if (c[i] == '-') {
+                obst[top++] = x1 - x2;
+            } else if (c[i] == '*') {
+                obst[top++] = x1 * x2;
+            } else if (c[i] == '/') {
+                obst[top++] = x1 / x2;
+            }
             i++;
         }
+
     }
 
     return obst[0];
@@ -93,7 +75,7 @@ int main() {
     //  允许输入空格
     scanf("%[^\n]", c);
 
-    printf("结果为：%f", EvalPost(c));
+    printf("结果为：%f", calc(c));
 
     return 0;
 }
