@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/1、顺序表的实现/sequlist.c" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/1、顺序表的实现/test.c" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/2、顺序栈及其实现/2.1、栈的应用一之括号匹配/seqmatch.c" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/2、顺序栈及其实现/2.2、栈的应用二之算术表达求值/expression.c" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/2、顺序栈及其实现/2.2、栈的应用二之算术表达求值/postfix.c" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/2、顺序栈及其实现/seqstack.c" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/2、顺序栈及其实现/test.c" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/3.4_circular_linked_list/clnklist.c" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/3.4_circular_linked_list/main.c" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/3.4_circular_linked_list/slinklist.h" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/3、队列/test.c" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/4、单链表/slinkist.c" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/4、单链表/slinkist.h" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/4、单链表/test.c" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/第二章、线性表得链式存储/2.2、带头结点的单链表/test.c" charset="GBK" />
   </component>
 </project>
