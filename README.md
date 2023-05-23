@@ -13,14 +13,9 @@
 [//]: # (- [第三章 栈和队列]&#40;./第三章%20栈和队列/README.md&#41;)
 
 # 说明
-由于一些中文编码问题，可能会导致一些问题，所以在编译的时候，有时可能会需要你转换为 `GBK` 的编码格式，才能够正常编译，如果你使用的是 `VSCode` 的话，可以在 `settings.json` 中添加如下配置：
-```json
-{
-    "files.encoding": "gbk"
-}
-```
 最后，可能有些地方写的不是很好，欢迎大家指正，谢谢！
 
 # 作者
 - [GitHub](https://github.com/xie392)
+- [Gitee](https://gitee.com/xie392)
 - [Blog](https://xie392.cn)
